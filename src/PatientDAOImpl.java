@@ -87,7 +87,7 @@ public abstract class PatientDAOImpl {
                 conn = DriverManager.getConnection(url);
                 PreparedStatement ps = conn.prepareStatement(ADD_PATIENT);
                 //set parameter
-                ps.setInt(1, newptt.getP_ID());
+                ps.setInt(1, newptt.getP_id());
                 ps.setString(2, newptt.getP_name());
                 ps.setString(3, newptt.getP_gender());
                 ps.setInt(4, newptt.getP_age());
@@ -122,16 +122,16 @@ public abstract class PatientDAOImpl {
                 ps.setString(3, patient.getP_gender());
                 ps.setString(3, patient.getP_address());
                 ps.setString(4, patient.getP_blood_result());
-                ps.setInt(5, patient.getP_ID());
+                ps.setInt(5, patient.getP_id());
 
                 int rs = ps.executeUpdate();
                 if (rs != 0) {
                     System.out.println("Data with p_ID" +
-                            patient.getP_ID() + "was update.");
+                            patient.getP_id() + "was update.");
                 } else {
 
                     System.out.println("Cloud not update data with p_ID"
-                            + patient.getP_ID());
+                            + patient.getP_id());
                 }
 
                 ps.close();
